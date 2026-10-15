@@ -1,8 +1,8 @@
-# Atelier du manuscrit — prototipo 0.3
+# Atelier du manuscrit — prototype 0.3
 
-Una pagina HTML con moduli JavaScript separati, dati JSON completi e skills per modificare il framework. L’interfaccia è in francese. Importazione e analisi avvengono nel browser; Flask serve soltanto i file statici.
+Une page HTML avec des modules JavaScript séparés, des données JSON complètes et des skills pour modifier le framework. L’interface est en français. L’importation et l’analyse s’effectuent dans le navigateur ; Flask sert uniquement les fichiers statiques.
 
-## Avvio locale
+## Démarrage local
 
 ```bash
 python -m venv .venv
@@ -11,86 +11,86 @@ python -m pip install -r requirements.txt
 python server.py
 ```
 
-Aprire http://127.0.0.1:5000 e premere **Ouvrir l’exemple**. Il server si lega soltanto a localhost. Su Windows attivare l’ambiente con `.venv\Scripts\activate`. In alternativa qualsiasi server HTTP statico può servire la stessa cartella. L’apertura diretta `file://` non è il percorso supportato: si utilizzano ES modules, fetch e un module Worker.
+Ouvrir http://127.0.0.1:5000 et cliquer sur **Ouvrir l’exemple**. Le serveur écoute uniquement sur localhost. Sous Windows, activer l’environnement avec `.venv\Scripts\activate`. Tout autre serveur HTTP statique peut également servir le même dossier. L’ouverture directe via `file://` n’est pas prise en charge : l’application utilise des modules ES, fetch et un Worker de type module.
 
-## Prime prove
+## Premiers essais
 
-1. Caricare il campione, oppure trascinare un altro ZIP ALTO/METS: non esiste alcun limite applicativo di dieci scansioni.
-2. La scansione 062 viene aperta se presente, perché il campione contiene la sua immagine. Selezionare altre scansioni dal menu.
-3. Cliccare una parola per vedere tutte le occorrenze della forma; cliccare la corrispondenza o la fonte per raggiungere la linea sul facsimile. La concordanza mantiene la propria posizione di scorrimento, mentre l’immagine rimane visibile accanto ai risultati.
-4. Usare +/−, rotella o pinch per ingrandire; trascinare per spostarsi. Tastiera sul facsimile: frecce per pan, +/− per zoom, Home per la vista intera, L per la linea. Le coordinate rimangono quelle delle linee ALTO.
-5. Attivare **Afficher les lignes** per confrontare i ritagli delle linee in concordanza. I ritagli lunghi scorrono orizzontalmente; il clic apre la linea nel visualizzatore. Il grigio nei contesti testuali identifica i frammenti provenienti da linee precedenti/successive, mentre il testo della stessa linea rimane scuro.
-6. Scegliere **Expression régulière**, poi **Formes** o **Texte des lignes**. Sulla prima si cercano forme originali e tutte le loro occorrenze; sulla seconda anche spazi, punteggiatura e sequenze di parole. Pattern senza delimitatori /…/, flag separati; inizialmente gu. Le regex usano il testo originale e il motore JavaScript nativo. Dettagli ed esempi in `docs/regex-search.md`.
-7. Regolare contesto, cassa, diacritici, prefisso, regione, confidenza e ordinamento. Cassa/diacritici delle ricerche letterali sono disabilitati in modalità regex, dove valgono i flag espliciti. **Confiance min.** filtra il WC originale della linea. Le occorrenze sono paginabili, senza un limite nascosto ai risultati.
-8. Selezionare una linea, modificarne il testo e applicare: indice e concordanze vengono ricostruiti. Il WC rimane quello originario, dichiarato come tale.
-9. Esportare il JSON completo, lo ZIP ALTO oppure lo ZIP PAGE con rapporto di conversione. Gli XML originali del campione non vengono modificati.
-10. **Enregistrer ici** salva una bozza in IndexedDB; **Reprendre** la ricarica nello stesso browser/profilo/indirizzo. Le immagini aggiunte nella sessione non sono incluse nella bozza JSON: aggiungerle di nuovo o conservarle nel percorso configurato. JSON scarica invece un file trasferibile. I tooltip sono disponibili al passaggio del mouse e al focus da tastiera.
+1. Charger l’échantillon ou déposer une autre archive ZIP ALTO/METS : l’application n’impose aucune limite de dix vues numérisées.
+2. La vue 062 s’ouvre si elle est présente, car l’échantillon contient son image. Sélectionner d’autres vues dans le menu.
+3. Cliquer sur un mot pour voir toutes les occurrences de la forme ; cliquer sur la correspondance ou la source pour atteindre la ligne sur le fac-similé. La concordance conserve sa position de défilement, tandis que l’image reste visible à côté des résultats.
+4. Utiliser +/−, la molette ou le pincement pour zoomer ; faire glisser pour se déplacer. Au clavier, dans le fac-similé : flèches pour se déplacer, +/− pour zoomer, Home pour la vue d’ensemble, L pour la ligne. Les coordonnées restent celles des lignes ALTO.
+5. Activer **Afficher les lignes** pour comparer les extraits d’image des lignes dans la concordance. Les extraits longs défilent horizontalement ; un clic ouvre la ligne dans la visionneuse. Dans les contextes textuels, le gris signale les fragments provenant des lignes précédentes ou suivantes, tandis que le texte de la même ligne reste foncé.
+6. Choisir **Expression régulière**, puis **Formes** ou **Texte des lignes**. Le premier mode recherche les formes originales et toutes leurs occurrences ; le second permet aussi de rechercher des espaces, de la ponctuation et des séquences de mots. Saisir le motif sans délimiteurs /…/ et les indicateurs séparément ; leur valeur initiale est gu. Les expressions régulières utilisent le texte original et le moteur JavaScript natif. Détails et exemples dans `docs/regex-search.md`.
+7. Régler le contexte, la casse, les diacritiques, le préfixe, la région, la confiance et le tri. Les options de casse et de diacritiques des recherches littérales sont désactivées en mode regex, où les indicateurs explicites s’appliquent. **Confiance min.** filtre selon le WC original de la ligne. Les occurrences sont paginées, sans limite cachée sur le nombre de résultats.
+8. Sélectionner une ligne, modifier son texte et appliquer : l’index et les concordances sont reconstruits. Le WC reste celui d’origine et est signalé comme tel.
+9. Exporter le JSON complet, l’archive ZIP ALTO ou l’archive ZIP PAGE avec un rapport de conversion. Les XML originaux de l’échantillon ne sont pas modifiés.
+10. **Enregistrer ici** sauvegarde un brouillon dans IndexedDB ; **Reprendre** le recharge dans le même navigateur, avec le même profil et à la même adresse. Les images ajoutées pendant la session ne sont pas incluses dans le brouillon JSON : les ajouter à nouveau ou les conserver à l’emplacement configuré. Le bouton JSON télécharge, quant à lui, un fichier transférable. Les infobulles sont accessibles au survol de la souris et lors de la prise de focus au clavier.
 
-## Nuovo nella 0.3
+## Nouveautés de la version 0.3
 
-- **Infobulles** attiva/disattiva le spiegazioni; la scelta viene ricordata.
-- Giunture trascinabili tra colonne e sotto le aree di lettura, risultati, lessico, editor e facsimile; angoli per larghezza e altezza insieme. I separatori rispondono anche alle frecce della tastiera. Doppio clic ripristina una giuntura; **Réinitialiser les panneaux** ripristina le dimensioni salvate.
-- **Formes ordonnées par fréquence**: min./max. inclusivi e **Appliquer**, con tutte le forme corrispondenti paginabili.
-- **Ajouter un onglet**: scegliere un JSONL fra quelli di `data/analyses/`, oppure un proprio livello conforme. Nessun livello analitico precaricato. Attributi e nome derivano dai metadati; ricerche esatte, prefissi e regex native sui loro valori.
-- Ogni livello mantiene i propri filtri, contesto, ordine, immagini e paginazione. Le concordanze testuali restano indipendenti. Si possono interrogare i nomi di una famiglia conservando la grafia effettiva; nel corpus completo `Paris` ha 15 occorrenze candidate, tutte `paris`, incluse sei in `aparis`.
-- Gli edit aggiornano gli ancoraggi e invalidano le analisi coinvolte. **À réanalyser** esporta le annotazioni con il contesto attuale per rielaborarle esternamente. Il prototipo non effettua rianalisi.
-- JSON/bozza/GitHub conservano tutti i livelli caricati, gli stati e la storia. Gli export ALTO/PAGE mantengono il loro contratto precedente.
+- **Infobulles** active ou désactive les explications ; le choix est mémorisé.
+- Des séparateurs déplaçables se trouvent entre les colonnes et sous les zones de lecture, de résultats, de lexique, d’édition et de fac-similé ; des poignées d’angle permettent de régler simultanément la largeur et la hauteur. Les séparateurs répondent également aux flèches du clavier. Un double clic réinitialise un séparateur ; **Réinitialiser les panneaux** réinitialise les dimensions enregistrées.
+- **Formes ordonnées par fréquence** : bornes min./max. inclusives et bouton **Appliquer**, avec pagination de toutes les formes correspondantes.
+- **Ajouter un onglet** : choisir un JSONL parmi ceux de `data/analyses/`, ou une couche personnelle conforme au contrat. Aucune couche d’analyse n’est préchargée. Les attributs et le nom proviennent des métadonnées ; leurs valeurs peuvent faire l’objet de recherches exactes, par préfixe ou par expressions régulières natives.
+- Chaque couche conserve ses propres filtres, contexte, ordre, images et pagination. Les concordances textuelles restent indépendantes. Il est possible d’interroger les noms d’une famille tout en conservant la graphie effective ; dans le corpus complet, `Paris` compte 15 occurrences candidates, toutes sous la forme `paris`, dont six dans `aparis`.
+- Les modifications mettent à jour les ancrages et invalident les analyses concernées. **À réanalyser** exporte les annotations avec le contexte actuel afin de les retraiter à l’extérieur de l’application. Le prototype n’effectue pas de réanalyse.
+- Le JSON, le brouillon et la sauvegarde GitHub conservent toutes les couches chargées, les états et l’historique. Les exports ALTO/PAGE conservent leur contrat précédent.
 
-Il contratto e gli esempi sono in `docs/analysis-layers.md`. I sei JSONL coprono l’opera intera (28 132 annotazioni), ma si caricano anche con le dieci scansioni: le annotazioni delle altre pagine restano conservate fuori dal sottoinsieme. Le analisi fornite sono osservazioni/candidati automatici dichiarati, non un’edizione criticamente validata.
+Le contrat et les exemples figurent dans `docs/analysis-layers.md`. Les six JSONL couvrent l’œuvre entière (28 132 annotations), mais peuvent aussi être chargés avec les dix vues : les annotations des autres pages sont conservées en dehors du sous-ensemble. Les analyses fournies sont explicitement présentées comme des observations ou des candidats produits automatiquement ; elles ne constituent pas une édition validée sur le plan critique.
 
-## Campione
+## Échantillon
 
-Sono dieci **scansioni**, spesso doppie pagine: 008, 019, 062, 068, 099, 115, 130, 138, 150, 158. Totale: 775 linee segmentate. Gli ALTO sono identici agli originali; il METS è ridotto alle dieci immagini, conservando ID e numeri fisici originari. La 068 è priva di linee nell’export; questo non certifica che il manoscritto sia bianco. Il campione include soltanto `FRAC34172_CC138_062.jpg`. Motivi della selezione in `data/sample-selection.json`.
+Il comprend dix **vues numérisées**, souvent des doubles pages : 008, 019, 062, 068, 099, 115, 130, 138, 150, 158. Total : 775 lignes segmentées. Les ALTO sont identiques aux originaux ; le METS est réduit aux dix images, en conservant les identifiants et les numéros physiques d’origine. La vue 068 ne contient aucune ligne dans l’export ; cela ne permet pas de conclure que le manuscrit est vierge à cet endroit. L’échantillon comprend uniquement l’image `FRAC34172_CC138_062.jpg`. Les raisons de la sélection figurent dans `data/sample-selection.json`.
 
-`data/sample-project.json` contiene già la serializzazione completa degli XML del campione: può essere importato direttamente per ispezionare e provare il contratto JSON.
+`data/sample-project.json` contient déjà la sérialisation complète des XML de l’échantillon : il peut être importé directement pour examiner et tester le contrat JSON.
 
-## Moduli
+## Modules
 
-| Modulo | Funzione |
+| Module | Fonction |
 |---|---|
-| `importer.js` | ZIP, ALTO, METS, ordine dei documenti e immagini |
-| `xml.js` | Parsing e serializzazione XML, escaping |
-| `xmlalto.js` | ALTO ↔ modello JSON completo |
-| `model.js` | Viste runtime, ID, struttura, editing |
-| `index.js` | Tokenizzazione e indice posizionale delle occorrenze |
-| `regex.js`, `regex-worker.js` | Motore regex nativo, ambiti, match e cancellazione |
-| `reader.js` | Lettura, parole selezionabili e linee |
-| `concordance.js` | KWIC, ordinamenti e paginazione |
-| `facsimile.js` | Associazione delle immagini e geometria delle linee |
-| `viewport.js` | Zoom, pan, limiti e inquadrature in coordinate ALTO |
-| `tooltips.js` | Spiegazioni con hover/focus e supporto touch |
-| `editor.js` | Modifica del testo della linea |
-| `storage.js` | Download, ZIP e bozza in IndexedDB |
-| `github.js` | Lettura del blob immutabile e commit del JSON |
-| `xmlpage.js` | Esportazione PAGE dichiarata e verificata |
-| `anchors.js`, `analysis.js` | Ancoraggi, JSONL, indici analitici, validità e storia |
-| `analysis-ui.js` | Tabs autonomi creati dai metadati |
-| `layout.js`, `vocabulary.js` | Giunture, dimensioni e intervalli di frequenza |
-| `app.js` | Composizione e interazioni |
+| `importer.js` | ZIP, ALTO, METS, ordre des documents et images |
+| `xml.js` | Analyse syntaxique et sérialisation XML, échappement |
+| `xmlalto.js` | ALTO ↔ modèle JSON complet |
+| `model.js` | Vues à l’exécution, identifiants, structure, édition |
+| `index.js` | Tokenisation et index positionnel des occurrences |
+| `regex.js`, `regex-worker.js` | Moteur regex natif, périmètres de recherche, correspondances et annulation |
+| `reader.js` | Lecture, mots sélectionnables et lignes |
+| `concordance.js` | KWIC, tris et pagination |
+| `facsimile.js` | Association des images et géométrie des lignes |
+| `viewport.js` | Zoom, déplacement, limites et cadrages en coordonnées ALTO |
+| `tooltips.js` | Explications au survol et au focus, prise en charge tactile |
+| `editor.js` | Modification du texte de la ligne |
+| `storage.js` | Téléchargement, ZIP et brouillon dans IndexedDB |
+| `github.js` | Lecture du blob immuable et commit du JSON |
+| `xmlpage.js` | Export PAGE documenté et vérifié |
+| `anchors.js`, `analysis.js` | Ancrages, JSONL, index analytiques, validité et historique |
+| `analysis-ui.js` | Onglets autonomes créés à partir des métadonnées |
+| `layout.js`, `vocabulary.js` | Séparateurs, dimensions et intervalles de fréquence |
+| `app.js` | Assemblage et interactions |
 
-JSZip e xml-js sono inclusi localmente, con licenze. Nessun CDN a runtime. L’indice posizionale è implementato nel framework: la ricerca esatta accede alle liste delle occorrenze; i prefissi esplorano il vocabolario. Le regex testano il vocabolario originale o tutte le linee in un Worker terminabile. `regexTimeoutMs` configura il tempo massimo (inizialmente quattro secondi), senza riscrivere pattern o imporre un limite ai risultati. I contesti attraversano le linee entro la stessa scansione/regione, senza unire documenti non consecutivi.
+JSZip et xml-js sont inclus localement, avec leurs licences. Aucun CDN n’est utilisé à l’exécution. L’index positionnel est implémenté dans le framework : la recherche exacte accède aux listes d’occurrences ; les recherches par préfixe parcourent le vocabulaire. Les expressions régulières testent le vocabulaire original ou toutes les lignes dans un Worker pouvant être arrêté. `regexTimeoutMs` configure la durée maximale (initialement quatre secondes), sans réécrire les motifs ni imposer de limite au nombre de résultats. Les contextes traversent les lignes au sein d’une même vue ou région, sans réunir des documents non consécutifs.
 
-## GitHub e Pages
+## GitHub et Pages
 
-L’area GitHub permette di caricare e salvare **un progetto JSON**. Inserire proprietario, repository, branch, percorso e token personale con permessi sul repository. Il token rimane soltanto nella sessione e non entra nel JSON, in IndexedDB o nei file scaricati.
+La zone GitHub permet de charger et d’enregistrer **un projet JSON**. Saisir le propriétaire, le dépôt, la branche, le chemin et un jeton personnel disposant des permissions sur le dépôt. Le jeton reste uniquement dans la session et n’est inclus ni dans le JSON, ni dans IndexedDB, ni dans les fichiers téléchargés.
 
-Per aggiornare un file esistente, caricarlo prima dall’interfaccia: il salvataggio usa lo SHA di quel blob. Se cambia sul repository, il sistema segnala il conflitto e conserva il lavoro in memoria. Esportare il JSON prima di ricaricare. Il prototipo non esegue fusioni automatiche. Se il percorso non esiste, il pulsante crea il file. Un salvataggio sul repository non certifica la successiva pubblicazione su Pages.
+Pour mettre à jour un fichier existant, le charger d’abord depuis l’interface : l’enregistrement utilise le SHA de ce blob. Si le fichier change dans le dépôt, le système signale le conflit et conserve le travail en mémoire. Exporter le JSON avant de recharger. Le prototype n’effectue pas de fusion automatique. Si le chemin n’existe pas, le bouton crée le fichier. Un enregistrement dans le dépôt ne garantit pas la publication ultérieure sur Pages.
 
-Il ramo deve consentire i commit diretti. Le prove del connettore usano risposte simulate: nessuna scrittura è stata eseguita su un repository reale. Il caricamento di ZIP/immagini non invia materiali al server; la scrittura remota avviene soltanto tramite il pulsante GitHub.
+La branche doit autoriser les commits directs. Les tests du connecteur utilisent des réponses simulées : aucune écriture n’a été effectuée dans un dépôt réel. Le chargement d’archives ZIP ou d’images n’envoie aucun document au serveur ; l’écriture distante s’effectue uniquement via le bouton GitHub.
 
-Per Pages pubblicare i file statici della cartella. `.nojekyll` è incluso. Non pubblicare l’ambiente Python, `tests/out`, credenziali o materiali che non si desiderano rendere accessibili. Non serve Flask su Pages.
+Pour Pages, publier les fichiers statiques du dossier. Le fichier `.nojekyll` est inclus. Ne pas publier l’environnement Python, `tests/out`, les identifiants de connexion ou les documents que l’on ne souhaite pas rendre accessibles. Flask n’est pas nécessaire sur Pages.
 
-## Skills e personalizzazione
+## Skills et personnalisation
 
-Le skills sotto `skills/` sono istruzioni di sviluppo del repository, non sono installate automaticamente nel profilo ChatGPT. Iniziare da `build-workbench/SKILL.md`, che coordina i contratti. Le skills specializzate riguardano ALTO, PAGE, indice, lettura, concordanze, facsimile, persistenza, livelli analitici e personalizzazione dei pannelli. Mantenerle aggiornate insieme ai moduli.
+Les skills du dossier `skills/` sont des instructions de développement du dépôt ; elles ne sont pas installées automatiquement dans le profil ChatGPT. Commencer par `build-workbench/SKILL.md`, qui coordonne les contrats. Les skills spécialisées concernent ALTO, PAGE, l’index, la lecture, les concordances, le fac-similé, la persistance, les couches d’analyse et la personnalisation des panneaux. Les maintenir à jour avec les modules.
 
-Esempio di intervento: «Usa la skill present-concordances per aggiungere un raggruppamento scelto dall’utente; conserva il riferimento di ogni occorrenza alla linea e verifica che il clic apra il facsimile corretto».
+Exemple d’intervention : « Utilise la skill present-concordances pour ajouter un regroupement choisi par l’utilisateur ; conserve la référence de chaque occurrence à sa ligne et vérifie qu’un clic ouvre le bon fac-similé ».
 
-`config.json` regola contesto, paginazione, immagini, immagine preferita nell’esempio e timeout delle regex. Il contratto del JSON e delle occorrenze è in `docs/model-contract.md`. La 0.3 continua a usare lo schema progetto JSON v1: i progetti della 0.1/0.2 restano caricabili, con analysisLayers facoltativo.
+`config.json` règle le contexte, la pagination, les images, l’image privilégiée dans l’exemple et le délai maximal des expressions régulières. Le contrat du JSON et des occurrences figure dans `docs/model-contract.md`. La version 0.3 continue d’utiliser le schéma de projet JSON v1 : les projets des versions 0.1/0.2 restent chargeables, avec analysisLayers facultatif.
 
-## Verifiche
+## Vérifications
 
-Serve Node.js moderno per le prove dei moduli e Python con lxml per lo schema PAGE.
+Une version récente de Node.js est nécessaire pour les tests des modules, ainsi que Python avec lxml pour le schéma PAGE.
 
 ```bash
 npm test
@@ -98,21 +98,21 @@ FULL_CORPUS_PATH=/percorso/export_completo.zip npm test
 python tests/validate_exports.py
 ```
 
-Le prove esercitano importazione, ritorno ALTO → JSON → ALTO, ordine METS, Unicode, occorrenze ripetute, modifica e reindicizzazione, JSON, PAGE e GitHub simulato. La suite 0.2 verifica anche regex native con gruppi/catture/indici, lookaround, backreference, flag g/i/m/s/y/u/v/d, match a lunghezza zero, Worker reale tramite adattatore Node, cancellazione e timeout, appartenenza dei contesti alle linee, geometria di zoom/pan e ritagli, riferimenti delle righe renderizzate con un test double DOM. Queste prove non sostituiscono la verifica dei gesti e del layout nel browser.
+Les tests couvrent l’importation, l’aller-retour ALTO → JSON → ALTO, l’ordre METS, Unicode, les occurrences répétées, la modification et la réindexation, JSON, PAGE et GitHub simulé. La suite 0.2 vérifie également les expressions régulières natives avec groupes, captures et indices, assertions avant et arrière (lookaround), références arrière (backreferences), indicateurs g/i/m/s/y/u/v/d, correspondances de longueur nulle, Worker réel via un adaptateur Node, annulation et dépassement du délai maximal, rattachement des contextes aux lignes, géométrie du zoom, du déplacement et des extraits d’image, ainsi que les références des lignes affichées à l’aide d’une doublure de test du DOM. Ces tests ne remplacent pas la vérification des gestes et de la mise en page dans le navigateur.
 
-Il rapporto di questa esecuzione è in `docs/verification.json`. Tempi misurati con Node.js nell’ambiente di prova: non sono benchmark del browser dell’utente. Non è stata eseguita una verifica visiva/interattiva in un browser durante questa consegna.
+Le rapport de cette exécution figure dans `docs/verification.json`. Les temps ont été mesurés avec Node.js dans l’environnement de test : ils ne constituent pas des mesures de performance du navigateur de l’utilisateur. Aucune vérification visuelle ou interactive dans un navigateur n’a été effectuée lors de cette livraison.
 
-## Limiti dichiarati
+## Limites déclarées
 
-- Una Page ALTO per file. Il numero di file è variabile.
-- Editing del testo solo per le linee con un singolo String, come nel corpus fornito. Più String restano consultabili.
-- Nessuna geometria inventata per parole; sul facsimile si localizza la linea.
-- Nessuna inferenza automatica di colonne nei blocchi non classificati. Nella 158 l’ordine va verificato sull’immagine, non disponibile nel campione.
-- PAGE conserva testo e geometria delle linee; non riproduce tutti gli attributi ALTO e non è presentato come conversione reversibile. Il JSON mantiene gli originali.
-- Esportazione JSON v1 e livelli analitici JSONL; ricerca fuzzy non implementata. Le regex sul testo lavorano su una linea ALTO alla volta; i contesti KWIC possono attraversare linee della stessa scansione/regione.
-- I match di parola e le regex di testo hanno offset nei caratteri originali; sul facsimile viene sempre localizzata la linea, senza coordinate di parola inventate.
-- Gli XML esportati conservano l’informazione della struttura, non la formattazione byte per byte degli originali.
+- Un élément Page ALTO par fichier. Le nombre de fichiers est variable.
+- La modification du texte est limitée aux lignes contenant un seul élément String, comme dans le corpus fourni. Les lignes contenant plusieurs éléments String restent consultables.
+- Aucune géométrie n’est inventée pour les mots ; la localisation sur le fac-similé se fait à l’échelle de la ligne.
+- Aucune inférence automatique des colonnes dans les blocs non classés. Pour la vue 158, l’ordre doit être vérifié sur l’image, qui n’est pas disponible dans l’échantillon.
+- PAGE conserve le texte et la géométrie des lignes ; il ne reproduit pas tous les attributs ALTO et n’est pas présenté comme une conversion réversible. Le JSON conserve les originaux.
+- Export JSON v1 et couches d’analyse JSONL ; recherche approximative non implémentée. Les expressions régulières sur le texte traitent une ligne ALTO à la fois ; les contextes KWIC peuvent traverser les lignes d’une même vue ou région.
+- Les correspondances de mots et les expressions régulières sur le texte utilisent des décalages dans les caractères originaux ; sur le fac-similé, la localisation se fait toujours à l’échelle de la ligne, sans coordonnées de mots inventées.
+- Les XML exportés conservent l’information structurelle, sans reproduire octet par octet la mise en forme des originaux.
 
-### Verifica della 0.3
+### Vérification de la version 0.3
 
-Eseguire `npm test`, oppure con `FULL_CORPUS_PATH=/percorso/archivio.zip npm test`. I test 0.3 verificano i sei livelli sul campione e sull’intero corpus, edit e dipendenze, conservazione dei record, JSON/JSONL, regex su attributi, più frammenti e intervalli di frequenza. I report descrivono la verifica automatica in Node e gli eventuali doppi DOM: non attestano layout, gesti touch, IndexedDB o scritture reali GitHub nel browser.
+Exécuter `npm test`, ou `FULL_CORPUS_PATH=/percorso/archivio.zip npm test`. Les tests 0.3 vérifient les six couches sur l’échantillon et sur l’ensemble du corpus, les modifications et les dépendances, la conservation des enregistrements, JSON/JSONL, les expressions régulières sur les attributs, les fragments multiples et les intervalles de fréquence. Les rapports décrivent la vérification automatique dans Node et les éventuelles doublures du DOM : ils ne valident ni la mise en page, ni les gestes tactiles, ni IndexedDB, ni les écritures réelles sur GitHub dans le navigateur.
