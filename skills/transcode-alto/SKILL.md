@@ -16,3 +16,5 @@ Maintain one Page per ALTO file in v0.1 unless the shared contract and all consu
 Verify an unedited ALTO → JSON → ALTO cycle for every input document, not one sample. Verify JSON reload and reimported ZIP order. Include ampersands, quotes, combining Unicode, empty lines and absent attributes in checks. Run npm test and the complete corpus when provided. Do not modify the original sample ZIP's ALTO bytes.
 
 Support both zipped input and repository XML listed in a JSON manifest (config.corpusManifest). Share parsing, validation and METS ordering; keep relative source filenames stable and load the entire corpus before replacing the active project. The manifest lists files, not reading order. Preserve original XML bytes when seeding xml-alto/ from the sample ZIP.
+
+After adding or removing repository XML, run npm run update-corpus-manifest. npm test checks manifest coverage independently of the ten-view ZIP fixture; keep full-repository tests separate from sample tests.
