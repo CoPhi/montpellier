@@ -1,0 +1,1 @@
+{"name":"manuscript-workbench","version":"0.3.0","private":true,"type":"module","scripts":{"test":"node tests/integration.mjs && node tests/features-02.mjs && node tests/features-03.mjs && node tests/ui-03.mjs"}}

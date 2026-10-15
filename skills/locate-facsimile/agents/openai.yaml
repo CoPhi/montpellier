@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fac-similé"
+  short_description: "Locate lines on images using original ALTO geometry"
+  default_prompt: "Use $locate-facsimile to extend the image panel while retaining ALTO coordinate correspondence."

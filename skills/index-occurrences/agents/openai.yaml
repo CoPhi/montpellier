@@ -1,0 +1,4 @@
+interface:
+  display_name: "Indice des occurrences"
+  short_description: "Search words and lines with native JavaScript regex"
+  default_prompt: "Use $index-occurrences to change native regex or literal searches while preserving every occurrence and its original source offsets."

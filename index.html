@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Atelier du manuscrit</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div><h1>Atelier du manuscrit</h1><p>Texte, concordances et fac-similé · prototype 0.3</p></div><div class="load-actions">
+<button id="sample" data-tooltip="Charger les dix vues et l’image incluses dans le prototype.">Ouvrir l’exemple</button>
+<button id="import-corpus" data-tooltip="Choisir un ZIP ALTO/METS ou un projet JSON sur votre ordinateur.">Importer</button><input id="corpus-input" type="file" accept=".zip,.json" hidden>
+<label class="tooltip-option"><input id="tooltip-toggle" type="checkbox" checked>Infobulles</label><button id="reset-layout">Réinitialiser les panneaux</button>
+<button id="restore-local" data-tooltip="Ouvrir le dernier projet enregistré dans ce navigateur.">Reprendre</button></div></header>
+<div id="dropzone">Déposer un ZIP ALTO ici · les images peuvent être ajoutées séparément.</div>
+<p id="status" role="status">Choisir un corpus ou ouvrir l’exemple de dix vues.</p>
+<main id="workspace" hidden>
+<div class="project-bar"><strong id="corpus-stats"></strong><div>
+<button id="save-local" data-tooltip="Conserver le texte et ses modifications dans ce navigateur pour reprendre le travail plus tard. Les images ajoutées ne sont pas enregistrées.">Enregistrer ici</button>
+<button id="export-json" data-tooltip="Télécharger le projet complet et ses modifications pour le conserver ou le recharger.">JSON</button>
+<button id="export-alto" data-tooltip="Télécharger les XML-ALTO du projet et le manifeste METS.">ALTO</button>
+<button id="export-page" data-tooltip="Télécharger les XML-PAGE et le rapport de conversion.">PAGE</button></div></div>
+<div class="workspace-layout">
+<div class="content-column">
+<section class="panel reader-panel"><div class="panel-heading"><h2>Lecture</h2><div><button id="page-prev" aria-label="Vue précédente" data-tooltip="Ouvrir la vue précédente.">←</button><select id="page-select" aria-label="Vue"></select><button id="page-next" aria-label="Vue suivante" data-tooltip="Ouvrir la vue suivante.">→</button></div></div><p class="hint">Cliquer sur un mot ouvre sa concordance et montre sa ligne sur le fac-similé.</p><div id="reader"></div></section>
+<section class="panel concordance-panel"><div class="panel-heading"><h2>Concordances</h2><span id="result-count">Sélectionner un mot.</span></div>
+<div class="concordance-tabs" role="tablist" aria-label="Niveaux de concordance"><button id="text-tab" role="tab" aria-selected="true">Texte</button><div id="analysis-tabs"></div><button id="add-analysis" data-tooltip="Choisir un JSONL. Ses métadonnées définissent le nom et les attributs du nouvel onglet.">Ajouter un onglet</button><input id="analysis-input" type="file" accept=".jsonl,.ndjson" hidden></div>
+<div id="text-controls"><form id="search-form">
+<label>Forme / motif<input id="query" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="selari" data-tooltip="En mode regex, saisir le motif sans les délimiteurs /…/. Espaces et caractères sont conservés tels quels."></label>
+<label>Recherche<select id="match-mode"><option value="exact">Exacte</option><option value="prefix">Préfixe</option><option value="regex">Expression régulière</option></select></label>
+<div id="regex-controls" class="regex-controls" hidden>
+<label>Sur<select id="regex-scope" data-tooltip="Formes: tester les mots du vocabulaire original et montrer toutes leurs occurrences. Lignes: chercher dans le texte original, espaces et ponctuation compris."><option value="vocabulary">Formes</option><option value="lines">Texte des lignes</option></select></label>
+<label>Flags<input id="regex-flags" value="gu" autocapitalize="off" autocomplete="off" spellcheck="false" data-tooltip="Flags natifs JavaScript, par exemple gu ou giu. g: toutes les correspondances par ligne; sans g: la première. i: ignorer la casse. u et v sont exclusifs. Syntaxe et flags dépendent du moteur de votre navigateur."></label>
+</div>
+<label>Région<select id="zone-filter"><option value="">Toutes</option><option>MainZone#left</option><option>MainZone#right</option><option>unclassified</option></select></label>
+<label>Contexte<input id="context" type="number" min="0" max="40" value="8" data-tooltip="Nombre de mots de chaque côté. Le gris indique les fragments provenant d’une autre ligne. Le contexte reste dans la même vue et région."></label>
+<label>Ordre<select id="sort"><option value="document">Document</option><option value="left">Contexte gauche</option><option value="right">Contexte droit</option></select></label><button type="submit">Chercher</button></form>
+<p id="regex-hint" class="hint" hidden>Motif et flags JavaScript sur le texte original. Les options de normalisation ci-dessous concernent les recherches exacte et par préfixe.</p>
+<div class="search-options"><label><input id="ignore-case" type="checkbox" checked>Ignorer la casse</label><label><input id="ignore-diacritics" type="checkbox">Ignorer les diacritiques</label>
+<label data-tooltip="Score de reconnaissance de la ligne dans l’export d’origine, entre 0 et 1. Laisser vide pour afficher toutes les occurrences. Une ligne sans score est exclue si un seuil est choisi.">Confiance min. <input id="minimum-confidence" type="number" min="0" max="1" step="0.05" placeholder="—"></label>
+<label><input id="show-line-images" type="checkbox" data-tooltip="Afficher un extrait du fac-similé pour chaque ligne trouvée. Faire défiler horizontalement les lignes longues; cliquer pour les examiner avec zoom et déplacement.">Afficher les lignes</label></div>
+</div>
+<div id="analysis-controls" hidden>
+<p id="analysis-info" class="hint"></p>
+<form id="analysis-form"><label>Attribut<select id="analysis-field"></select></label><label>Valeur<input id="analysis-value" list="analysis-values" autocomplete="off" placeholder="Toutes les valeurs"><datalist id="analysis-values"></datalist></label><label>Recherche<select id="analysis-mode"><option value="exact">Exacte</option><option value="prefix">Préfixe</option><option value="regex">Expression régulière</option></select></label><label>Flags<input id="analysis-flags" value="u" data-tooltip="Flags JavaScript natifs. Le motif est testé sur les valeurs de cet attribut, sans modifier le texte source."></label><label>Annotations<select id="analysis-status"><option value="current">Actuelles</option><option value="all">Inclure celles à réexaminer</option></select></label><label>Contexte<input id="analysis-context" type="number" min="0" max="40" value="8"></label><label>Ordre<select id="analysis-sort"><option value="document">Document</option><option value="left">Contexte gauche</option><option value="right">Contexte droit</option></select></label><button>Chercher</button></form>
+<div class="search-options"><label><input id="analysis-images" type="checkbox">Afficher les lignes</label><button id="analysis-export">Exporter ce niveau</button><button id="analysis-review" data-tooltip="Exporter les analyses invalidées et leur contexte actuel pour les refaire à l’extérieur, puis importer le nouveau JSONL.">À réanalyser</button></div>
+</div>
+<div id="results-scroll" class="table-wrap"><table><thead><tr><th>Contexte gauche</th><th>Correspondance</th><th>Contexte droit</th><th>Source → ligne</th></tr></thead><tbody id="results"></tbody></table></div><div class="pagination"><button id="results-prev" disabled>Précédentes</button><button id="results-next" disabled>Suivantes</button></div>
+</section>
+<section class="bottom-grid"><article id="vocabulary-panel" class="panel"><h2>Formes ordonnées par fréquence</h2><form id="frequency-form"><label>min.<input id="frequency-min" type="number" min="1" step="1" value="1"></label><label>max.<input id="frequency-max" type="number" min="1" step="1" placeholder="—"></label><button>Appliquer</button></form><p id="frequency-count" class="hint"></p><div id="vocabulary"></div><div class="pagination"><button id="vocab-prev">Précédentes</button><button id="vocab-next">Suivantes</button></div></article><article id="editor-panel" class="panel"><h2>Éditer la ligne sélectionnée</h2><p id="line-info" class="hint">Sélectionner une ligne.</p><textarea id="edit-text" disabled rows="4"></textarea><button id="apply-edit" data-tooltip="Modifier la transcription de cette ligne et actualiser les recherches. La géométrie et le score de reconnaissance d’origine sont conservés.">Appliquer</button><p class="hint">La confiance affichée reste celle de l’export original.</p></article></section>
+</div>
+<aside class="panel facsimile-panel"><div class="panel-heading"><h2>Fac-similé</h2><button id="add-images" data-tooltip="Ajouter les images depuis votre ordinateur. Elles restent disponibles pendant cette session.">Images</button><input type="file" id="image-input" multiple accept="image/*" hidden></div>
+<div class="viewer-toolbar" role="group" aria-label="Navigation du fac-similé">
+<button id="image-zoom-in" aria-label="Zoom avant" data-tooltip="Agrandir autour du centre. Sur l’image, utiliser la molette ou le pincement pour zoomer autour du point observé.">+</button>
+<button id="image-zoom-out" aria-label="Zoom arrière" data-tooltip="Réduire le grossissement.">−</button>
+<button id="image-line" data-tooltip="Cadrer la ligne sélectionnée. La géométrie disponible est celle de la ligne.">Ligne</button>
+<button id="image-full" data-tooltip="Afficher la page entière et réinitialiser le cadrage.">Page entière</button>
+<span class="hint">Glisser pour déplacer</span></div>
+<svg id="facsimile" tabindex="0" role="img" aria-label="Fac-similé interactif. Glisser pour déplacer; molette ou pincement pour zoomer. Au clavier: flèches, plus, moins, Home et L." data-tooltip="Glisser: déplacer. Molette ou pincement: zoomer. Maj+molette: déplacer. Clavier: flèches, +/−, Home pour la page, L pour la ligne."></svg>
+<p id="image-status" class="hint" role="status"></p>
+<details><summary>Chemin des images</summary><label>Répertoire / URL de base <input id="image-base" type="text"></label></details>
+</aside>
+</div></main>
+<details class="panel github-panel"><summary>GitHub · chargement et sauvegarde explicites</summary><p class="hint">Token limité au dépôt avec Contents: write. Conservé seulement pendant cette session.</p><div class="github-fields"><label>Propriétaire<input id="github-owner" placeholder="username"></label><label>Dépôt<input id="github-repo" placeholder="manuscript"></label><label>Branche<input id="github-branch" value="main"></label><label>Chemin JSON<input id="github-path" value="data/manuscript.json"></label><label>Token<input id="github-token" type="password" autocomplete="off"></label><label>Message du commit<input id="github-message" value="Update manuscript data"></label></div><p><button id="github-load">Charger</button> <button id="github-save">Enregistrer</button> <button id="github-forget">Oublier le token</button></p><p id="github-status" role="status" class="hint">Aucune connexion.</p></details>
+<footer>Traitement dans le navigateur · exploration du texte et de ses sources visuelles.</footer>
+<script src="vendor/jszip.min.js"></script><script src="vendor/xml-js.min.js"></script><script type="module" src="js/app.js"></script>
+</body></html>

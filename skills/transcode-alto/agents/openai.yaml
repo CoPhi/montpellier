@@ -1,0 +1,4 @@
+interface:
+  display_name: "ALTO et JSON"
+  short_description: "Preserve ALTO data across JSON import and export"
+  default_prompt: "Use $transcode-alto to modify ALTO import/export while preserving source information."

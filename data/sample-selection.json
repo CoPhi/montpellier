@@ -1,0 +1,49 @@
+{
+  "source": "export_doc291_libre_del_clavaire_alto_202610131631.zip",
+  "scans": [
+    {
+      "file": "FRAC34172_CC138_008.xml",
+      "reason": "Prologue, consuls, bloc non classé"
+    },
+    {
+      "file": "FRAC34172_CC138_019.xml",
+      "reason": "Recettes hebdomadaires et salaires"
+    },
+    {
+      "file": "FRAC34172_CC138_062.xml",
+      "reason": "Double page, lignes brèves et fac-similé disponible"
+    },
+    {
+      "file": "FRAC34172_CC138_068.xml",
+      "reason": "ALTO sans ligne"
+    },
+    {
+      "file": "FRAC34172_CC138_099.xml",
+      "reason": "Écritures, lettres en français et achat du registre"
+    },
+    {
+      "file": "FRAC34172_CC138_115.xml",
+      "reason": "Aumônes, enfant trouvé et funérailles"
+    },
+    {
+      "file": "FRAC34172_CC138_130.xml",
+      "reason": "Document juridique en latin, bloc non classé"
+    },
+    {
+      "file": "FRAC34172_CC138_138.xml",
+      "reason": "Ambassades et compte non rendu"
+    },
+    {
+      "file": "FRAC34172_CC138_150.xml",
+      "reason": "Récapitulation et renvois aux cartes"
+    },
+    {
+      "file": "FRAC34172_CC138_158.xml",
+      "reason": "Compte ajouté, groupes de lignes entrelacés"
+    }
+  ],
+  "lineCount": 775,
+  "imagesIncluded": [
+    "FRAC34172_CC138_062.jpg"
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lecture du manuscrit"
+  short_description: "Connect manuscript reading to concordances and images"
+  default_prompt: "Use $present-reading to alter the reading view while preserving source text and word-to-line connections."

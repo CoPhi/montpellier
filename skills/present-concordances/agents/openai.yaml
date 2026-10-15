@@ -1,0 +1,4 @@
+interface:
+  display_name: "Concordances"
+  short_description: "Customize contexts and ordering without losing sources"
+  default_prompt: "Use $present-concordances to add a research view that keeps every occurrence linked to its source line."

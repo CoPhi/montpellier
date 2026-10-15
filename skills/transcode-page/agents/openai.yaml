@@ -1,0 +1,4 @@
+interface:
+  display_name: "Export PAGE"
+  short_description: "Export PAGE with explicit mappings and validation"
+  default_prompt: "Use $transcode-page to extend PAGE export and verify it against the declared schema."

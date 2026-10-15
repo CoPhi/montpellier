@@ -1,0 +1,4 @@
+interface:
+  display_name: "Atelier du manuscrit"
+  short_description: "Coordinate a modular manuscript research workbench"
+  default_prompt: "Use $build-workbench to extend this repository while preserving its data and module contracts."

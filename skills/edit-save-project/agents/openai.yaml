@@ -1,0 +1,4 @@
+interface:
+  display_name: "Édition et sauvegarde"
+  short_description: "Edit data with recoverable local and GitHub saves"
+  default_prompt: "Use $edit-save-project to modify editing or saving without losing source data or concurrent changes."

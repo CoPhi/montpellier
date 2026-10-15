@@ -1,0 +1,277 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manuscript analysis JSONL record, version 1",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/metadata"
+    },
+    {
+      "$ref": "#/$defs/annotation"
+    }
+  ],
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "recordType",
+        "format",
+        "version",
+        "level",
+        "source",
+        "anchoring",
+        "provenance",
+        "coverage"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "metadata"
+        },
+        "format": {
+          "const": "manuscript-analysis"
+        },
+        "version": {
+          "const": 1
+        },
+        "level": {
+          "type": "object",
+          "required": [
+            "id",
+            "label",
+            "type",
+            "fields"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "label": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": {
+              "type": "string"
+            },
+            "fields": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "path",
+                  "label",
+                  "valueType"
+                ],
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "valueType": {
+                    "enum": [
+                      "string",
+                      "boolean",
+                      "number",
+                      "array",
+                      "object"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "source": {
+          "type": "object",
+          "required": [
+            "archiveSha256",
+            "textSha256",
+            "documentCount",
+            "lineCount",
+            "documents"
+          ],
+          "properties": {
+            "archiveSha256": {
+              "$ref": "#/$defs/digest"
+            },
+            "textSha256": {
+              "$ref": "#/$defs/digest"
+            },
+            "documentCount": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "lineCount": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "documents": {
+              "type": "array"
+            }
+          }
+        },
+        "anchoring": {
+          "type": "object",
+          "required": [
+            "unit",
+            "range"
+          ],
+          "properties": {
+            "unit": {
+              "const": "utf16-code-unit"
+            },
+            "range": {
+              "const": "half-open"
+            }
+          }
+        },
+        "provenance": {
+          "type": "object"
+        },
+        "coverage": {
+          "type": "object"
+        }
+      }
+    },
+    "annotation": {
+      "type": "object",
+      "required": [
+        "recordType",
+        "id",
+        "targets",
+        "analysis",
+        "status",
+        "dependencies",
+        "provenance"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "annotation"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "targets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/target"
+          }
+        },
+        "analysis": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "status": {
+          "type": "object",
+          "required": [
+            "anchor",
+            "analysis",
+            "review"
+          ],
+          "properties": {
+            "anchor": {
+              "enum": [
+                "resolved",
+                "ambiguous",
+                "missing",
+                "outside-corpus"
+              ]
+            },
+            "analysis": {
+              "enum": [
+                "current",
+                "needs-review",
+                "removed",
+                "superseded"
+              ]
+            },
+            "review": {
+              "enum": [
+                "unreviewed",
+                "automatic-observation",
+                "human-reviewed"
+              ]
+            }
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "lineKey",
+              "lineSha256"
+            ],
+            "properties": {
+              "lineKey": {
+                "type": "string"
+              },
+              "lineSha256": {
+                "$ref": "#/$defs/digest"
+              }
+            }
+          }
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "ruleId": {
+              "type": "string"
+            },
+            "assessment": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "document",
+        "lineId",
+        "lineKey",
+        "start",
+        "end",
+        "quote",
+        "lineSha256"
+      ],
+      "properties": {
+        "document": {
+          "type": "string"
+        },
+        "lineId": {
+          "type": "string"
+        },
+        "lineKey": {
+          "type": "string"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quote": {
+          "type": "string"
+        },
+        "lineSha256": {
+          "$ref": "#/$defs/digest"
+        }
+      }
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

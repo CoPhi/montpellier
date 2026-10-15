@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workspace layout"
+  short_description: "Resize panels and customize learnable controls"
+  default_prompt: "Use $customize-layout to update panel sizing and optional manuscript tooltips."

@@ -1,0 +1,188 @@
+{
+  "version": "0.3.0",
+  "date": "2026-10-14",
+  "timezone": "Etc/UTC",
+  "runtime": "Node.js v24.19.0; module tests, not browser benchmarks",
+  "corpora": [
+    {
+      "corpus": "sample",
+      "scans": 10,
+      "lines": 775,
+      "occurrences": 6932,
+      "importMs": 281.4,
+      "modelAndIndexMs": 37.1,
+      "averageExactQueryMs": 0.002,
+      "jsonBytes": 965942,
+      "altoRoundTrip": "pass",
+      "pageFiles": 10
+    },
+    {
+      "corpus": "full",
+      "scans": 152,
+      "lines": 9604,
+      "occurrences": 99689,
+      "importMs": 1667.3,
+      "modelAndIndexMs": 430.3,
+      "averageExactQueryMs": 0.031,
+      "jsonBytes": 13183421,
+      "altoRoundTrip": "pass",
+      "pageFiles": 152
+    }
+  ],
+  "regexCorpora": [
+    {
+      "corpus": "sample",
+      "regexVocabularyOccurrences": 11,
+      "regexLineMatches": 13,
+      "regexCombinedMs": 0.7
+    },
+    {
+      "corpus": "full",
+      "regexVocabularyOccurrences": 292,
+      "regexLineMatches": 298,
+      "regexCombinedMs": 3.2
+    }
+  ],
+  "sourcePreservation": {
+    "uneditedAltoSemanticRoundTrip": "all 152 ALTO files passed",
+    "originalSampleAltoBytes": "identical"
+  },
+  "features": {
+    "nativeRegex": "pattern/flags unchanged; groups, indices, backreferences, lookarounds, g/i/m/s/y/u/v/d and zero-length matches passed",
+    "independentRegexChecks": "36 sample jobs matched an independent native oracle; source identity, context ownership and filters passed",
+    "worker": "actual Node-adapted transport, cancellation and timeout passed",
+    "concordanceContexts": "line ownership and gray rendering passed with a DOM test double",
+    "facsimile": "viewport zoom/pan/focus/reset mathematics, crop rectangles and rendered ALTO-space SVG attributes passed",
+    "tooltips": "toggle/hover wiring passed with DOM test double; browser/touch unperformed",
+    "layout": "column separator keyboard/reset and corpus preservation passed with DOM test double; actual pointer/layout unperformed",
+    "frequency": "inclusive range 5–10 and >24 matching forms passed; all matching forms paginable",
+    "analyticalTabs": "metadata-driven tabs, independent filters, retained scroll, source selection, edits and atomic invalid imports passed with DOM test double"
+  },
+  "pageSchema": {
+    "version": "2019-07-15",
+    "passedFiles": 162
+  },
+  "flask": {
+    "staticModulesAndWorker": "passed",
+    "pathContainment": "passed",
+    "assetCount": 16,
+    "previewServerStarted": false
+  },
+  "skills": {
+    "validated": 10,
+    "independentPass": "manage-analysis-layers forward test found six edge cases; corrected and rerun against raw artifacts; index-occurrences previous checks retained"
+  },
+  "github": {
+    "utf8SaveImmutableReadConflict": "passed with mocked responses",
+    "liveRemoteWrites": false
+  },
+  "browser": {
+    "visualAndInteractiveQA": false,
+    "gestureAndStickyLayoutQA": false
+  },
+  "analysis": {
+    "version": "0.3",
+    "metrics": [
+      {
+        "corpus": "sample",
+        "bindingMs": 392.3,
+        "layers": [
+          {
+            "total": 815,
+            "current": 63,
+            "review": 0,
+            "outside": 752,
+            "unresolved": 0
+          },
+          {
+            "total": 1127,
+            "current": 55,
+            "review": 0,
+            "outside": 1072,
+            "unresolved": 0
+          },
+          {
+            "total": 1941,
+            "current": 156,
+            "review": 0,
+            "outside": 1785,
+            "unresolved": 0
+          },
+          {
+            "total": 3502,
+            "current": 187,
+            "review": 0,
+            "outside": 3315,
+            "unresolved": 0
+          },
+          {
+            "total": 20233,
+            "current": 1314,
+            "review": 0,
+            "outside": 18919,
+            "unresolved": 0
+          },
+          {
+            "total": 514,
+            "current": 61,
+            "review": 0,
+            "outside": 453,
+            "unresolved": 0
+          }
+        ]
+      },
+      {
+        "corpus": "full",
+        "bindingMs": 539.1,
+        "layers": [
+          {
+            "total": 815,
+            "current": 815,
+            "review": 0,
+            "outside": 0,
+            "unresolved": 0
+          },
+          {
+            "total": 1127,
+            "current": 1127,
+            "review": 0,
+            "outside": 0,
+            "unresolved": 0
+          },
+          {
+            "total": 1941,
+            "current": 1941,
+            "review": 0,
+            "outside": 0,
+            "unresolved": 0
+          },
+          {
+            "total": 3502,
+            "current": 3502,
+            "review": 0,
+            "outside": 0,
+            "unresolved": 0
+          },
+          {
+            "total": 20233,
+            "current": 20233,
+            "review": 0,
+            "outside": 0,
+            "unresolved": 0
+          },
+          {
+            "total": 514,
+            "current": 514,
+            "review": 0,
+            "outside": 0,
+            "unresolved": 0
+          }
+        ]
+      }
+    ],
+    "checks": "anchors, edit invalidation, history, dependencies, JSON/JSONL reload, full source matching, subset availability, arbitrary fields, native analytical regex, frequency range",
+    "browserQA": false
+  },
+  "checksComplete": true,
+  "scope": "Automatic module tests on both corpora and DOM event test double; no visual browser QA, live preview or real remote writes."
+}

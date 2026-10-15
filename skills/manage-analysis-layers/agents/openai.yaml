@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analysis layers"
+  short_description: "Maintain JSONL annotations and revision anchors"
+  default_prompt: "Use $manage-analysis-layers to add an analytical concordance level while preserving source anchors."
