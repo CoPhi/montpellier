@@ -1,1 +1,1 @@
-{"language":"fr","contextWords":8,"resultsPerPage":50,"imageBase":"images/","sampleZip":"data/clavaire_sample_10.zip","preferredImageName":"FRAC34172_CC138_062.jpg","matching":"exact","ignoreCase":true,"ignoreDiacritics":false,"regexTimeoutMs":4000}
+{"language":"fr","contextWords":8,"resultsPerPage":50,"imageBase":"images/","sampleZip":"data/clavaire_sample_10.zip","preferredImageName":"FRAC34172_CC138_062.jpg","matching":"exact","ignoreCase":true,"ignoreDiacritics":false,"regexTimeoutMs":4000,"corpusManifest":"xml-alto/manifest.json"}

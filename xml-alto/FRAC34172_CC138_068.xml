@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.loc.gov/standards/alto/ns-v4#"
+      xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v4# http://www.loc.gov/standards/alto/v4/alto-4-2.xsd">
+  <Description>
+    <MeasurementUnit>pixel</MeasurementUnit>
+    <sourceImageInformation>
+      <fileName>FRAC34172_CC138_068.jpg</fileName>
+    </sourceImageInformation>
+  </Description>
+  <Tags>
+    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT3" LABEL="Commentary" DESCRIPTION="block type Commentary"/><OtherTag ID="BT4" LABEL="Illustration" DESCRIPTION="block type Illustration"/><OtherTag ID="BT710" LABEL="MainZone#left" DESCRIPTION="block type MainZone#left"/><OtherTag ID="BT711" LABEL="MainZone#right" DESCRIPTION="block type MainZone#right"/>
+    <OtherTag ID="LT751" LABEL="default" DESCRIPTION="line type default"/>
+  </Tags>
+  <Layout>
+    <Page WIDTH="7374"
+          HEIGHT="5000"
+          PHYSICAL_IMG_NR="60"
+          ID="eSc_dummypage_">
+      <PrintSpace HPOS="0"
+                  VPOS="0"
+                  WIDTH="7374"
+                  HEIGHT="5000">
+        <TextBlock HPOS="3687.0"
+                   VPOS="0.0"
+                   WIDTH="3687.0"
+                   HEIGHT="5000.0"
+                   ID="eSc_block_FRAC34172_CC138_068_right"
+                   TAGREFS="BT711">
+          <Shape><Polygon POINTS="3687 0 7374 0 7374 5000 3687 5000"/></Shape>
+        </TextBlock>
+        <TextBlock HPOS="0.0"
+                   VPOS="0.0"
+                   WIDTH="3687.0"
+                   HEIGHT="5000.0"
+                   ID="eSc_block_FRAC34172_CC138_068_left"
+                   TAGREFS="BT710">
+          <Shape><Polygon POINTS="0 0 3687 0 3687 5000 0 5000"/></Shape>
+        </TextBlock>
+      </PrintSpace>
+    </Page>
+  </Layout>
+</alto>

@@ -1,4 +1,4 @@
-import {importZip,importJson} from './importer.js';
+import {importZip,importJson,importRepository} from './importer.js';
 import {createModel} from './model.js';
 import {buildIndex,search,vocabulary} from './index.js';
 import {renderReader} from './reader.js';
@@ -62,6 +62,18 @@ async function useProject(project,images=[],warnings=[]){const start=performance
 async function loadFile(file){if(state.busy)return;if(state.dirty&&!confirm('Remplacer le corpus? Exporter ou sauvegarder les modifications avant de continuer.'))return;state.busy=true;try{message('Importation…');if(/\.json$/i.test(file.name)){await useProject(importJson(await file.text()));}else{const result=await importZip(await file.arrayBuffer(),(done,total)=>message(`Importation: ${done}/${total} fichiers`));result.project.sourceName=file.name;await useProject(result.project,result.images,result.warnings);}gitStore?.forget();gitStore=null;gitTarget='';}catch(e){message(e.message,true);}finally{state.busy=false;}}
 $('corpus-input').onchange=e=>{if(e.target.files[0])loadFile(e.target.files[0]);};
 $('import-corpus').onclick=()=>$('corpus-input').click();
+$('repository-corpus').hidden=!config.corpusManifest;
+$('repository-corpus').onclick=async()=>{
+  if(state.busy)return;
+  if(state.dirty&&!confirm('Remplacer le corpus? Exporter ou sauvegarder les modifications avant de continuer.'))return;
+  state.busy=true;$('repository-corpus').disabled=true;
+  try{
+    message('Chargement du corpus du dépôt…');
+    const result=await importRepository(config.corpusManifest,{onProgress:(done,total)=>message(`Importation: ${done}/${total} fichiers`)});
+    await useProject(result.project,result.images,result.warnings);
+    gitStore?.forget();gitStore=null;gitTarget='';
+  }catch(e){message(e.message,true);}finally{state.busy=false;$('repository-corpus').disabled=false;}
+};
 $('add-images').onclick=()=>$('image-input').click();
 $('sample').onclick=async()=>{try{const r=await fetch(config.sampleZip);if(!r.ok)throw new Error('Exemple indisponible.');await loadFile(new File([await r.blob()],'clavaire_sample_10.zip'));}catch(e){message(e.message,true);}};
 const drop=$('dropzone');drop.ondragover=e=>{e.preventDefault();drop.classList.add('drag');};drop.ondragleave=()=>drop.classList.remove('drag');drop.ondrop=e=>{e.preventDefault();drop.classList.remove('drag');if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0]);};

@@ -1,0 +1,14 @@
+{
+  "scope": "Repository XML corpus loading",
+  "checks": {
+    "npm test": "pass; integration, features-02, features-03, UI DOM double, repository-corpus",
+    "static HTTP": "pass; manifest, 11 XML resources, 10 views, 775 lines and image availability",
+    "source XML bytes": "identical to sample ZIP",
+    "git diff --check": "pass"
+  },
+  "limits": [
+    "No visual or interactive browser verification",
+    "Full corpus not available for this run",
+    "GitHub Pages deployment not verified"
+  ]
+}

@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <fileSec>
+    
+    <fileGrp USE="export">
+      
+        <file ID="export1">
+          <FLocat xlink:href="FRAC34172_CC138_008.xml"/>
+        </file>
+      
+        <file ID="export12">
+          <FLocat xlink:href="FRAC34172_CC138_019.xml"/>
+        </file>
+      
+        <file ID="export55">
+          <FLocat xlink:href="FRAC34172_CC138_062.xml"/>
+        </file>
+      
+        <file ID="export61">
+          <FLocat xlink:href="FRAC34172_CC138_068.xml"/>
+        </file>
+      
+        <file ID="export92">
+          <FLocat xlink:href="FRAC34172_CC138_099.xml"/>
+        </file>
+      
+        <file ID="export108">
+          <FLocat xlink:href="FRAC34172_CC138_115.xml"/>
+        </file>
+      
+        <file ID="export123">
+          <FLocat xlink:href="FRAC34172_CC138_130.xml"/>
+        </file>
+      
+        <file ID="export131">
+          <FLocat xlink:href="FRAC34172_CC138_138.xml"/>
+        </file>
+      
+        <file ID="export143">
+          <FLocat xlink:href="FRAC34172_CC138_150.xml"/>
+        </file>
+      
+        <file ID="export151">
+          <FLocat xlink:href="FRAC34172_CC138_158.xml"/>
+        </file>
+      
+        </fileGrp>
+  </fileSec>
+  <structMap TYPE="physical">
+    <div TYPE="document">
+      
+      <div TYPE="page">
+        
+        <fptr FILEID="export1"/>
+      </div>
+      
+      <div TYPE="page">
+        
+        <fptr FILEID="export12"/>
+      </div>
+      
+      <div TYPE="page">
+        
+        <fptr FILEID="export55"/>
+      </div>
+      
+      <div TYPE="page">
+        
+        <fptr FILEID="export61"/>
+      </div>
+      
+      <div TYPE="page">
+        
+        <fptr FILEID="export92"/>
+      </div>
+      
+      <div TYPE="page">
+        
+        <fptr FILEID="export108"/>
+      </div>
+      
+      <div TYPE="page">
+        
+        <fptr FILEID="export123"/>
+      </div>
+      
+      <div TYPE="page">
+        
+        <fptr FILEID="export131"/>
+      </div>
+      
+      <div TYPE="page">
+        
+        <fptr FILEID="export143"/>
+      </div>
+      
+      <div TYPE="page">
+        
+        <fptr FILEID="export151"/>
+      </div>
+      
+      </div>
+  </structMap>
+</mets>

@@ -5,6 +5,31 @@ const basename=name=>name.split('/').at(-1);
 export async function importZip(bytes,onProgress=()=>{}) {
   const zip=await globalThis.JSZip.loadAsync(bytes,{checkCRC32:true});
   const entries=Object.values(zip.files).filter(f=>!f.dir && !f.name.includes('__MACOSX/'));
+  return importEntries(entries,onProgress);
+}
+// The manifest lists XML paths relative to itself; no directory listing or backend is needed.
+export async function importRepository(manifestPath,{baseUrl=globalThis.location?.href,fetcher=globalThis.fetch,onProgress=()=>{}}={}) {
+  const manifestUrl=new URL(manifestPath,baseUrl);
+  const response=await fetcher(manifestUrl.href);
+  if(!response.ok)throw new Error(`Manifeste indisponible (${response.status}): ${manifestPath}`);
+  const manifest=await response.json(),files=manifest?.files;
+  if(!Array.isArray(files)||!files.length)throw new Error('Le manifeste doit contenir une liste files non vide.');
+  const names=new Set();
+  for(const name of files){
+    if(typeof name!=='string'||! /\.xml$/i.test(name)||/[\\:%?#\u0000-\u001F\u007F]/u.test(name)||name.split('/').some(p=>!p||p==='.'||p==='..'))throw new Error(`Chemin XML relatif invalide: ${name}`);
+    if(names.has(name))throw new Error(`Fichier dupliqué dans le manifeste: ${name}`);
+    names.add(name);
+  }
+  const entries=files.map(name=>({name,async:async()=>{
+    const r=await fetcher(new URL(name,manifestUrl).href);
+    if(!r.ok)throw new Error(`XML indisponible (${r.status}): ${name}`);
+    return r.text();
+  }}));
+  const result=await importEntries(entries,onProgress);
+  result.project.sourceName=manifestPath;
+  return result;
+}
+async function importEntries(entries,onProgress) {
   const documents=[],manifests=[],images=[],warnings=[];
   let completed=0;
   for (const entry of entries) {
@@ -18,7 +43,7 @@ export async function importZip(bytes,onProgress=()=>{}) {
     }
     onProgress(++completed,entries.length);
   }
-  if(!documents.length) throw new Error('Aucun fichier ALTO dans cette archive.');
+  if(!documents.length) throw new Error('Aucun fichier ALTO dans ce corpus.');
   const order=[];
   for(const manifest of manifests) {
     const files=new Map(descendants(manifest.tree,'file').map(f=>[f.attributes?.ID,descendants(f,'FLocat')[0]?.attributes?.['xlink:href']]));
