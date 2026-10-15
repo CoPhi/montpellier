@@ -1,14 +1,19 @@
 {
-  "scope": "Repository XML corpus loading",
+  "scope": "Complete repository corpus; stale sample manifest regression",
   "checks": {
-    "npm test": "pass; integration, features-02, features-03, UI DOM double, repository-corpus",
-    "static HTTP": "pass; manifest, 11 XML resources, 10 views, 775 lines and image availability",
-    "source XML bytes": "identical to sample ZIP",
+    "npm test": "pass; manifest coverage, integration, features-02, features-03, UI DOM double, repository-corpus",
+    "repository import": {
+      "views": 152,
+      "lines": 9604,
+      "lastView": "FRAC34172_CC138_159.jpg"
+    },
+    "ALTO export fidelity": "pass for all 152 repository documents",
+    "stale manifest guard": "pass; adding an unlisted XML makes --check fail",
     "git diff --check": "pass"
   },
   "limits": [
     "No visual or interactive browser verification",
-    "Full corpus not available for this run",
-    "GitHub Pages deployment not verified"
+    "GitHub Pages deployment not verified",
+    "METS is retained unchanged; its ten referenced views precede unreferenced documents under the existing ordering contract"
   ]
 }

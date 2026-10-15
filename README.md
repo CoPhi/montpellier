@@ -15,12 +15,12 @@ Ouvrir http://127.0.0.1:5000 et cliquer sur **Ouvrir l’exemple**. Le serveur �
 
 ## Corpus XML du dépôt
 
-Le bouton **Ouvrir le corpus** charge les fichiers indiqués dans `xml-alto/manifest.json`. Le dépôt contient initialement les dix ALTO de l’échantillon et leur METS, extraits sans modification de l’archive d’exemple.
+Le bouton **Ouvrir le corpus** charge les fichiers indiqués dans `xml-alto/manifest.json`. Le manifeste du dépôt répertorie les 152 vues du corpus complet (008–159) et le METS. Le bouton **Ouvrir l’exemple** reste limité aux dix vues de l’échantillon.
 
 Pour utiliser un autre corpus :
 
 1. Déposer les XML ALTO dans `xml-alto/`, avec un éventuel fichier METS.
-2. Mettre à jour la liste `files` de `xml-alto/manifest.json` avec tous les chemins XML à charger, relatifs au manifeste. Les sous-dossiers sont acceptés ; les chemins absolus, les remontées `..` et les doublons sont refusés.
+2. Exécuter `npm run update-corpus-manifest` après chaque ajout ou suppression de XML, puis publier le manifeste actualisé avec les fichiers. La commande reconstruit la liste `files` de `xml-alto/manifest.json` avec tous les chemins XML, relatifs au manifeste. Les sous-dossiers sont acceptés ; les chemins absolus, les remontées `..` et les doublons sont refusés.
 3. Déposer les images correspondantes dans `images/`, avec les noms indiqués dans les ALTO, ou les ajouter depuis l’interface.
 4. Cliquer sur **Ouvrir le corpus** après publication des fichiers.
 
@@ -30,7 +30,7 @@ Exemple de manifeste :
 {"files":["FRAC34172_CC138_062.xml","METS.xml"]}
 ```
 
-Le METS détermine l’ordre des documents lorsqu’il est présent ; sinon, les numéros physiques ALTO et les noms de fichiers sont utilisés. Le manifeste énumère les fichiers à charger : il ne remplace pas le METS. Le navigateur ne parcourt pas automatiquement les dossiers. La clé `corpusManifest` de `config.json` permet de choisir un autre manifeste ; sans cette clé, le bouton est masqué. Le chargement reste entièrement côté navigateur et fonctionne avec un serveur statique, y compris GitHub Pages. Si un fichier manque ou est invalide, le chargement échoue sans remplacer le projet ouvert.
+Le METS détermine l’ordre des documents lorsqu’il est présent ; sinon, les numéros physiques ALTO et les noms de fichiers sont utilisés. Le manifeste énumère les fichiers à charger : il ne remplace pas le METS. Le navigateur ne parcourt pas automatiquement les dossiers. Ajouter des images seules ne crée pas de nouvelles vues : les ALTO correspondants doivent figurer dans le manifeste. `npm test` vérifie que ce manifeste énumère tous les XML du dossier. La clé `corpusManifest` de `config.json` permet de choisir un autre manifeste ; sans cette clé, le bouton est masqué. Le chargement reste entièrement côté navigateur et fonctionne avec un serveur statique, y compris GitHub Pages. Si un fichier manque ou est invalide, le chargement échoue sans remplacer le projet ouvert.
 
 Les imports ZIP et JSON restent disponibles. Les modifications s’enregistrent dans le projet JSON ou s’exportent en ALTO ; elles ne réécrivent pas les XML de `xml-alto/`.
 

@@ -45,7 +45,7 @@ globalThis.confirm=()=>true;
 const localFetch=globalThis.fetch;globalThis.fetch=async()=>new Response('',{status:404});
 await $('repository-corpus').onclick();assert.equal(window.workbench.project,corpus);assert.ok($('status').classList.contains('error'));assert.equal($('repository-corpus').disabled,false);
 globalThis.fetch=localFetch;
-await $('repository-corpus').onclick();await settled();assert.equal(window.workbench.model.pages.length,10);assert.equal(window.workbench.model.lines.length,775);assert.equal(window.workbench.project.sourceName,'xml-alto/manifest.json');assert.equal($('analysis-tabs').children.length,0);
+await $('repository-corpus').onclick();await settled();const repositoryFiles=JSON.parse(fs.readFileSync(new URL('../xml-alto/manifest.json',import.meta.url))).files;assert.equal(window.workbench.model.pages.length,repositoryFiles.filter(name=>name!=='METS.xml').length);assert.equal($('page-select').children.length,window.workbench.model.pages.length);assert.ok(window.workbench.model.pages.some(p=>p.imageName==='FRAC34172_CC138_159.jpg'));$('page-select').value=String(window.workbench.model.pages.length-1);$('page-select').onchange({target:$('page-select')});assert.ok($('image-status').textContent.includes('159.jpg'));assert.equal(window.workbench.project.sourceName,'xml-alto/manifest.json');assert.equal($('analysis-tabs').children.length,0);
 // Serializing project contains original annotations and durable revision state, not model cycles.
 assert.ok(JSON.stringify(corpus).includes('needs-review'));globalThis.fetch=fetchOriginal;
 console.log('0.3 UI event wiring PASS: tabs, filters, scroll, selection, edit, tooltip switch, split/reset, invalid imports (DOM double; no browser QA).');
