@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.loc.gov/standards/alto/ns-v4#"
+      xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v4# http://www.loc.gov/standards/alto/v4/alto-4-2.xsd">
+  <Description>
+    <MeasurementUnit>pixel</MeasurementUnit>
+    <sourceImageInformation>
+      <fileName>FRAC34172_CC138_071.jpg</fileName>
+    </sourceImageInformation>
+  </Description>
+  <Tags>
+    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT3" LABEL="Commentary" DESCRIPTION="block type Commentary"/><OtherTag ID="BT4" LABEL="Illustration" DESCRIPTION="block type Illustration"/><OtherTag ID="BT710" LABEL="MainZone#left" DESCRIPTION="block type MainZone#left"/><OtherTag ID="BT711" LABEL="MainZone#right" DESCRIPTION="block type MainZone#right"/>
+    <OtherTag ID="LT751" LABEL="default" DESCRIPTION="line type default"/>
+  </Tags>
+  <Layout>
+    <Page WIDTH="7436"
+          HEIGHT="5040"
+          PHYSICAL_IMG_NR="63"
+          ID="eSc_dummypage_">
+      <PrintSpace HPOS="0"
+                  VPOS="0"
+                  WIDTH="7436"
+                  HEIGHT="5040">
+        <TextBlock HPOS="3718.0"
+                   VPOS="0.0"
+                   WIDTH="3718.0"
+                   HEIGHT="5040.0"
+                   ID="eSc_block_FRAC34172_CC138_071_right"
+                   TAGREFS="BT711">
+          <Shape><Polygon POINTS="3718 0 7436 0 7436 5040 3718 5040"/></Shape>
+          <TextLine ID="eSc_line_973e3568"
+                    TAGREFS="LT751"
+                    BASELINE="7167 184 7251 187" 
+                    HPOS="7164.0"
+                    VPOS="95.0"
+                    WIDTH="87.0"
+                    HEIGHT="182.0">
+            <Shape><Polygon POINTS="7245 125 7175 95 7167 95 7167 184 7164 263 7245 277 7251 187 7251 131 7245 125"/></Shape>
+	    <String CONTENT="Pon"
+                    HPOS="7164.0"
+                    VPOS="95.0"
+                    WIDTH="87.0"
+                    HEIGHT="182.0"
+                    WC="0.983199934164683"></String>
+          </TextLine>
+        </TextBlock>
+        <TextBlock HPOS="0.0"
+                   VPOS="0.0"
+                   WIDTH="3718.0"
+                   HEIGHT="5040.0"
+                   ID="eSc_block_FRAC34172_CC138_071_left"
+                   TAGREFS="BT710">
+          <Shape><Polygon POINTS="0 0 3718 0 3718 5040 0 5040"/></Shape>
+        </TextBlock>
+      </PrintSpace>
+    </Page>
+  </Layout>
+</alto>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.loc.gov/standards/alto/ns-v4#"
+      xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v4# http://www.loc.gov/standards/alto/v4/alto-4-2.xsd">
+  <Description>
+    <MeasurementUnit>pixel</MeasurementUnit>
+    <sourceImageInformation>
+      <fileName>FRAC34172_CC138_067.jpg</fileName>
+    </sourceImageInformation>
+  </Description>
+  <Tags>
+    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT3" LABEL="Commentary" DESCRIPTION="block type Commentary"/><OtherTag ID="BT4" LABEL="Illustration" DESCRIPTION="block type Illustration"/><OtherTag ID="BT710" LABEL="MainZone#left" DESCRIPTION="block type MainZone#left"/><OtherTag ID="BT711" LABEL="MainZone#right" DESCRIPTION="block type MainZone#right"/>
+    <OtherTag ID="LT751" LABEL="default" DESCRIPTION="line type default"/>
+  </Tags>
+  <Layout>
+    <Page WIDTH="7374"
+          HEIGHT="4992"
+          PHYSICAL_IMG_NR="59"
+          ID="eSc_dummypage_">
+      <PrintSpace HPOS="0"
+                  VPOS="0"
+                  WIDTH="7374"
+                  HEIGHT="4992">
+        <TextBlock HPOS="0.0"
+                   VPOS="0.0"
+                   WIDTH="3687.0"
+                   HEIGHT="4992.0"
+                   ID="eSc_block_FRAC34172_CC138_067_left"
+                   TAGREFS="BT710">
+          <Shape><Polygon POINTS="0 0 3687 0 3687 4992 0 4992"/></Shape>
+          <TextLine ID="eSc_line_57bd7838"
+                    TAGREFS="LT751"
+                    BASELINE="491 1777 2510 1769" 
+                    HPOS="488.0"
+                    VPOS="1697.0"
+                    WIDTH="2022.0"
+                    HEIGHT="133.0">
+            <Shape><Polygon POINTS="1043 1716 1040 1716 1037 1716 1015 1736 740 1736 710 1713 707 1713 704 1713 701 1713 607 1733 488 1705 491 1777 491 1822 585 1810 762 1822 801 1824 804 1824 807 1824 810 1824 812 1822 823 1813 840 1822 857 1830 860 1830 862 1830 943 1822 1034 1810 1079 1819 1106 1824 1109 1824 1145 1819 1209 1808 1337 1816 1478 1827 1481 1827 1545 1813 1556 1813 1561 1813 1592 1827 1595 1827 1597 1827 1703 1813 1745 1808 1772 1813 1811 1819 1814 1819 1817 1819 1819 1819 1828 1810 1842 1805 1941 1805 1955 1810 1989 1824 1991 1824 1994 1824 1997 1824 2052 1810 2075 1805 2097 1808 2175 1824 2177 1824 2316 1808 2349 1824 2352 1824 2355 1827 2477 1827 2477 1824 2480 1824 2482 1824 2510 1805 2510 1769 2496 1697 2446 1730 2338 1730 2302 1700 2299 1700 2297 1700 2294 1700 2163 1730 1969 1730 1933 1700 1930 1700 1928 1700 1864 1697 1861 1697 1609 1700 1606 1700 1603 1700 1520 1730 1387 1702 1376 1700 1265 1700 1262 1700 1259 1700 1256 1700 1256 1702 1223 1725 1195 1711 1192 1711 1190 1711 1187 1711 1184 1711 1156 1730 1045 1716 1043 1716"/></Shape>
+	    <String CONTENT="Soma maior que monta cota la recepta dela moueda que es escada presa"
+                    HPOS="488.0"
+                    VPOS="1697.0"
+                    WIDTH="2022.0"
+                    HEIGHT="133.0"
+                    WC="0.9844824785695356"></String>
+          </TextLine>
+          <TextLine ID="eSc_line_5d87ba9c"
+                    TAGREFS="LT751"
+                    BASELINE="535 1880 2449 1866" 
+                    HPOS="532.0"
+                    VPOS="1816.0"
+                    WIDTH="1917.0"
+                    HEIGHT="119.0">
+            <Shape><Polygon POINTS="535 1880 535 1935 796 1933 798 1933 801 1933 826 1913 912 1933 915 1933 918 1933 973 1902 1098 1902 1276 1930 1278 1930 1412 1899 1592 1927 1595 1927 1597 1927 1683 1896 1872 1896 1928 1916 1930 1916 1933 1916 1936 1916 1939 1916 1955 1902 2003 1913 2005 1913 2008 1913 2147 1894 2274 1921 2277 1921 2280 1921 2358 1894 2441 1921 2449 1866 2441 1816 532 1835 535 1880"/></Shape>
+	    <String CONTENT="en aquests an tant den posecios: quãt de totas autras causas ais"
+                    HPOS="532.0"
+                    VPOS="1816.0"
+                    WIDTH="1917.0"
+                    HEIGHT="119.0"
+                    WC="0.9813792531306927"></String>
+          </TextLine>
+          <TextLine ID="eSc_line_b6053159"
+                    TAGREFS="LT751"
+                    BASELINE="529 1980 1287 1966 2460 1966" 
+                    HPOS="527.0"
+                    VPOS="1905.0"
+                    WIDTH="1933.0"
+                    HEIGHT="130.0">
+            <Shape><Polygon POINTS="529 1980 532 2035 626 2007 760 2035 765 2035 768 2035 771 2035 774 2035 807 2007 1115 2027 1118 2027 1120 2027 1170 2005 1312 2032 1315 2032 1317 2035 1525 2035 1525 2032 1528 2032 1531 2032 1628 2002 1742 2027 1745 2027 1747 2027 1750 2027 1792 2002 1930 2016 1933 2016 2005 2002 2044 2030 2047 2030 2050 2030 2052 2030 2055 2030 2058 2030 2077 2016 2238 2018 2241 2018 2244 2018 2288 1999 2322 2027 2324 2027 2327 2027 2330 2030 2460 2030 2460 1966 2458 1921 2072 1905 2069 1905 1844 1924 1836 1924 1833 1924 1814 1908 1811 1908 1808 1908 1806 1908 1711 1921 1606 1908 1603 1908 1511 1927 1503 1927 1492 1927 1334 1910 1331 1910 1328 1910 1298 1924 1259 1913 1256 1913 1253 1913 527 1933 529 1980"/></Shape>
+	    <String CONTENT="coma apar detras per diu̾sas partidas q̃ monta. cõptã. f a xx ꝓ"
+                    HPOS="527.0"
+                    VPOS="1905.0"
+                    WIDTH="1933.0"
+                    HEIGHT="130.0"
+                    WC="0.9675471149958097"></String>
+          </TextLine>
+        </TextBlock>
+        <TextBlock HPOS="3687.0"
+                   VPOS="0.0"
+                   WIDTH="3687.0"
+                   HEIGHT="4992.0"
+                   ID="eSc_block_FRAC34172_CC138_067_right"
+                   TAGREFS="BT711">
+          <Shape><Polygon POINTS="3687 0 7374 0 7374 4992 3687 4992"/></Shape>
+        </TextBlock>
+      </PrintSpace>
+    </Page>
+  </Layout>
+</alto>
