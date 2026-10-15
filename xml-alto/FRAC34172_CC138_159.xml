@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.loc.gov/standards/alto/ns-v4#"
+      xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v4# http://www.loc.gov/standards/alto/v4/alto-4-2.xsd">
+  <Description>
+    <MeasurementUnit>pixel</MeasurementUnit>
+    <sourceImageInformation>
+      <fileName>FRAC34172_CC138_159.jpg</fileName>
+    </sourceImageInformation>
+  </Description>
+  <Tags>
+    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT3" LABEL="Commentary" DESCRIPTION="block type Commentary"/><OtherTag ID="BT4" LABEL="Illustration" DESCRIPTION="block type Illustration"/><OtherTag ID="BT710" LABEL="MainZone#left" DESCRIPTION="block type MainZone#left"/><OtherTag ID="BT711" LABEL="MainZone#right" DESCRIPTION="block type MainZone#right"/>
+    <OtherTag ID="LT751" LABEL="default" DESCRIPTION="line type default"/>
+  </Tags>
+  <Layout>
+    <Page WIDTH="3664"
+          HEIGHT="5446"
+          PHYSICAL_IMG_NR="151"
+          ID="eSc_dummypage_">
+      <PrintSpace HPOS="0"
+                  VPOS="0"
+                  WIDTH="3664"
+                  HEIGHT="5446">
+        <TextBlock ID="eSc_dummyblock_">
+          <TextLine ID="eSc_line_7baae69a"
+                    TAGREFS="LT751"
+                    BASELINE="160 254 1173 284" 
+                    HPOS="157.0"
+                    VPOS="187.0"
+                    WIDTH="1016.0"
+                    HEIGHT="160.0">
+            <Shape><Polygon POINTS="160 254 157 290 223 317 226 317 229 317 232 317 235 317 257 302 363 326 366 326 562 302 662 335 665 335 668 335 671 335 704 320 916 335 919 335 922 335 925 335 953 317 983 344 986 344 989 344 992 347 1043 347 1043 344 1046 344 1049 344 1080 320 1170 320 1173 284 1173 229 771 229 732 217 683 205 680 205 677 205 620 214 586 220 574 214 547 196 544 196 541 196 462 193 459 193 456 193 405 211 390 214 387 208 372 196 369 196 366 196 260 187 257 187 160 202 160 254"/></Shape>
+	    <String CONTENT="Et daquestas. messios. Ay. Recendut"
+                    HPOS="157.0"
+                    VPOS="187.0"
+                    WIDTH="1016.0"
+                    HEIGHT="160.0"
+                    WC="0.9676262838499886"></String>
+          </TextLine>
+          <TextLine ID="eSc_line_39dfb44b"
+                    TAGREFS="LT751"
+                    BASELINE="242 2998 910 3016" 
+                    HPOS="239.0"
+                    VPOS="2940.0"
+                    WIDTH="671.0"
+                    HEIGHT="136.0">
+            <Shape><Polygon POINTS="907 2998 889 2968 798 2952 795 2952 792 2952 747 2968 744 2968 738 2968 626 2949 623 2949 620 2949 617 2949 599 2965 596 2965 478 2965 475 2962 459 2946 459 2943 456 2943 453 2943 450 2943 447 2943 411 2958 408 2958 353 2940 350 2940 347 2940 266 2949 242 2986 242 2998 239 3034 462 3070 465 3070 468 3070 520 3046 704 3076 707 3076 907 3052 910 3016 907 3001 907 2998"/></Shape>
+	    <String CONTENT="comte den anchoni ienes"
+                    HPOS="239.0"
+                    VPOS="2940.0"
+                    WIDTH="671.0"
+                    HEIGHT="136.0"
+                    WC="0.961685369844022"></String>
+          </TextLine>
+          <TextLine ID="eSc_line_1e7f1cfc"
+                    TAGREFS="LT751"
+                    BASELINE="127 3418 1779 3430" 
+                    HPOS="124.0"
+                    VPOS="3355.0"
+                    WIDTH="1655.0"
+                    HEIGHT="124.0">
+            <Shape><Polygon POINTS="1670 3373 1639 3373 1609 3370 1579 3370 1549 3370 1518 3370 1488 3370 1458 3367 1431 3367 1419 3379 1415 3382 1403 3379 1355 3367 1352 3367 1349 3367 1346 3367 1313 3379 1307 3379 1304 3379 1276 3364 1276 3364 1246 3364 1231 3376 1225 3379 1183 3376 1016 3361 1004 3361 974 3358 943 3358 913 3358 883 3358 865 3358 850 3373 844 3376 807 3370 729 3361 726 3361 656 3370 605 3376 596 3367 580 3358 580 3355 577 3355 574 3355 571 3355 568 3355 538 3367 526 3373 127 3364 127 3418 124 3455 774 3473 777 3473 780 3473 838 3455 844 3455 847 3455 883 3473 886 3473 1043 3476 1046 3476 1049 3476 1052 3476 1052 3473 1071 3455 1074 3455 1337 3455 1343 3455 1376 3479 1379 3479 1382 3479 1385 3479 1388 3479 1434 3458 1452 3476 1452 3479 1455 3479 1458 3479 1461 3479 1464 3479 1467 3479 1497 3458 1633 3458 1661 3479 1664 3479 1667 3479 1670 3479 1776 3455 1779 3430 1776 3385 1676 3373 1670 3373"/></Shape>
+	    <String CONTENT="ac couens ai los senhors cossols q̃ adoncas eron q̃ el o meyra"
+                    HPOS="124.0"
+                    VPOS="3355.0"
+                    WIDTH="1655.0"
+                    HEIGHT="124.0"
+                    WC="0.9780857620700714"></String>
+          </TextLine>
+          <TextLine ID="eSc_line_f403e356"
+                    TAGREFS="LT751"
+                    BASELINE="136 3509 1776 3515" 
+                    HPOS="133.0"
+                    VPOS="3455.0"
+                    WIDTH="1643.0"
+                    HEIGHT="124.0">
+            <Shape><Polygon POINTS="136 3509 133 3573 220 3573 220 3570 223 3570 226 3570 251 3548 311 3570 314 3570 317 3570 320 3570 399 3548 447 3570 450 3573 453 3573 456 3576 559 3576 559 3573 562 3573 565 3573 565 3570 586 3552 608 3567 611 3567 614 3567 617 3567 620 3567 674 3548 701 3570 701 3573 704 3573 707 3573 711 3573 714 3573 717 3573 717 3570 750 3548 862 3548 937 3570 953 3576 956 3576 959 3576 962 3576 974 3570 1007 3558 1040 3570 1046 3573 1049 3573 1052 3573 1092 3570 1249 3561 1261 3570 1264 3573 1264 3576 1267 3576 1270 3576 1273 3579 1412 3579 1412 3576 1415 3576 1419 3576 1425 3570 1452 3552 1506 3570 1521 3576 1524 3576 1527 3576 1530 3576 1543 3570 1594 3552 1769 3570 1776 3515 1769 3458 1685 3476 1588 3476 1573 3461 1573 3458 1570 3458 1567 3458 1564 3458 1558 3458 1491 3473 1434 3458 1428 3458 1425 3458 1422 3458 1419 3458 1412 3458 1373 3476 1125 3476 1113 3461 1110 3461 1110 3458 1107 3458 1104 3458 1101 3458 950 3464 738 3470 729 3464 720 3455 717 3455 714 3455 711 3455 707 3455 680 3464 662 3470 596 3464 465 3455 462 3455 459 3455 417 3467 402 3470 384 3467 323 3455 320 3455 136 3467 136 3509"/></Shape>
+	    <String CONTENT="en cõpte al Rey et se del o podia auer q̃ el o redera. al."
+                    HPOS="133.0"
+                    VPOS="3455.0"
+                    WIDTH="1643.0"
+                    HEIGHT="124.0"
+                    WC="0.9634123262712511"></String>
+          </TextLine>
+          <TextLine ID="eSc_line_d7ef5213"
+                    TAGREFS="LT751"
+                    BASELINE="142 3603 883 3603" 
+                    HPOS="142.0"
+                    VPOS="3545.0"
+                    WIDTH="741.0"
+                    HEIGHT="152.0">
+            <Shape><Polygon POINTS="142 3603 142 3654 235 3694 239 3694 242 3697 350 3697 350 3694 353 3694 357 3694 402 3657 481 3657 541 3694 544 3694 547 3694 550 3697 641 3697 641 3694 644 3694 692 3673 741 3691 744 3691 747 3691 750 3691 753 3691 786 3660 883 3654 883 3603 883 3558 583 3545 580 3545 577 3545 574 3545 553 3558 547 3564 326 3564 326 3561 311 3548 311 3545 308 3545 305 3545 199 3545 196 3545 193 3545 142 3561 142 3603"/></Shape>
+	    <String CONTENT="cosselh. se non q̃ anes ꝑ"
+                    HPOS="142.0"
+                    VPOS="3545.0"
+                    WIDTH="741.0"
+                    HEIGHT="152.0"
+                    WC="0.9609041643142701"></String>
+          </TextLine>
+          <TextLine ID="eSc_line_deb32841"
+                    TAGREFS="LT751"
+                    BASELINE="910 3603 1155 3588" 
+                    HPOS="907.0"
+                    VPOS="3548.0"
+                    WIDTH="248.0"
+                    HEIGHT="121.0">
+            <Shape><Polygon POINTS="910 3603 910 3648 1004 3669 1007 3669 1010 3669 1013 3669 1065 3639 1071 3633 1155 3630 1155 3588 1146 3548 907 3561 910 3603"/></Shape>
+	    <String CONTENT="paguat"
+                    HPOS="907.0"
+                    VPOS="3548.0"
+                    WIDTH="248.0"
+                    HEIGHT="121.0"
+                    WC="0.997624268134435"></String>
+          </TextLine>
+        </TextBlock>
+      </PrintSpace>
+    </Page>
+  </Layout>
+</alto>

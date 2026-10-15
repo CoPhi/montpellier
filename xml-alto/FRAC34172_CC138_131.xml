@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.loc.gov/standards/alto/ns-v4#"
+      xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v4# http://www.loc.gov/standards/alto/v4/alto-4-2.xsd">
+  <Description>
+    <MeasurementUnit>pixel</MeasurementUnit>
+    <sourceImageInformation>
+      <fileName>FRAC34172_CC138_131.jpg</fileName>
+    </sourceImageInformation>
+  </Description>
+  <Tags>
+    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT3" LABEL="Commentary" DESCRIPTION="block type Commentary"/><OtherTag ID="BT4" LABEL="Illustration" DESCRIPTION="block type Illustration"/><OtherTag ID="BT710" LABEL="MainZone#left" DESCRIPTION="block type MainZone#left"/><OtherTag ID="BT711" LABEL="MainZone#right" DESCRIPTION="block type MainZone#right"/>
+    <OtherTag ID="LT751" LABEL="default" DESCRIPTION="line type default"/>
+  </Tags>
+  <Layout>
+    <Page WIDTH="3482"
+          HEIGHT="3570"
+          PHYSICAL_IMG_NR="123"
+          ID="eSc_dummypage_">
+      <PrintSpace HPOS="0"
+                  VPOS="0"
+                  WIDTH="3482"
+                  HEIGHT="3570">
+        <TextBlock ID="eSc_dummyblock_">
+          <TextLine ID="eSc_line_341aabbf"
+                    TAGREFS="LT751"
+                    BASELINE="2668 715 2690 715" 
+                    HPOS="2668.0"
+                    VPOS="654.0"
+                    WIDTH="22.0"
+                    HEIGHT="87.0">
+            <Shape><Polygon POINTS="2668 715 2668 741 2690 739 2690 715 2686 654 2668 662 2668 715"/></Shape>
+	    <String CONTENT="5"
+                    HPOS="2668.0"
+                    VPOS="654.0"
+                    WIDTH="22.0"
+                    HEIGHT="87.0"
+                    WC="0.9881659746170044"></String>
+          </TextLine>
+          <TextLine ID="eSc_line_e4b4e5b4"
+                    TAGREFS="LT751"
+                    BASELINE="2021 1408 2021 1424" 
+                    HPOS="2001.0"
+                    VPOS="1408.0"
+                    WIDTH="52.0"
+                    HEIGHT="16.0">
+            <Shape><Polygon POINTS="2021 1424 2053 1422 2053 1408 2021 1408 2001 1408 2001 1424 2021 1424"/></Shape>
+	    <String CONTENT=""
+                    HPOS="2001.0"
+                    VPOS="1408.0"
+                    WIDTH="52.0"
+                    HEIGHT="16.0"></String>
+          </TextLine>
+          <TextLine ID="eSc_line_2c9a987b"
+                    TAGREFS="LT751"
+                    BASELINE="2718 1761 2783 1755" 
+                    HPOS="2712.0"
+                    VPOS="1705.0"
+                    WIDTH="73.0"
+                    HEIGHT="87.0">
+            <Shape><Polygon POINTS="2718 1761 2720 1792 2785 1779 2783 1755 2775 1705 2712 1707 2718 1761"/></Shape>
+	    <String CONTENT="3"
+                    HPOS="2712.0"
+                    VPOS="1705.0"
+                    WIDTH="73.0"
+                    HEIGHT="87.0"
+                    WC="0.9992309808731079"></String>
+          </TextLine>
+          <TextLine ID="eSc_line_1686887a"
+                    TAGREFS="LT751"
+                    BASELINE="2817 1755 2910 1741" 
+                    HPOS="2809.0"
+                    VPOS="1689.0"
+                    WIDTH="103.0"
+                    HEIGHT="86.0">
+            <Shape><Polygon POINTS="2817 1755 2819 1773 2912 1775 2910 1741 2900 1695 2864 1699 2862 1699 2851 1689 2849 1689 2847 1689 2845 1689 2843 1689 2809 1703 2817 1755"/></Shape>
+	    <String CONTENT="2."
+                    HPOS="2809.0"
+                    VPOS="1689.0"
+                    WIDTH="103.0"
+                    HEIGHT="86.0"
+                    WC="0.8982428312301636"></String>
+          </TextLine>
+        </TextBlock>
+      </PrintSpace>
+    </Page>
+  </Layout>
+</alto>
