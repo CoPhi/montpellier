@@ -27,3 +27,5 @@ UI modules must consume the model or index APIs; they must not reparse source XM
 For extension checks: run `npm test`; with the whole corpus, run `FULL_CORPUS_PATH=/absolute/archive.zip npm test`. Run `python tests/validate_exports.py` after the integration test. See `README.md` for prerequisites and current boundaries.
 
 The optional analysisLayers array serializes analytical metadata, immutable imported records, separate current states/history and per-tab settings. See analysis-layers.md. Rebinding verifies exact line hashes. Never treat absent scans as deleted annotations or ambiguous source anchors as valid concordance hits.
+
+Repository corpus import uses config.corpusManifest, a JSON manifest with a nonempty files array of unique relative XML paths. Resolve files relative to the manifest URL; preserve those relative paths as document names. Import ALTO/METS through the same XML parsing, validation and METS ordering pipeline as ZIP imports. Do not replace the open project until the whole import succeeds. Images remain separate and use the configured imageBase. Saving JSON or exporting ALTO does not overwrite the repository source XML.

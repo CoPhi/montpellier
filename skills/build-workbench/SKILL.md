@@ -23,3 +23,5 @@ Delegate XML fidelity to ../transcode-alto/SKILL.md; PAGE mapping to ../transcod
 Preserve the user's intended sequence: import, read, interrogate, return to image, edit, export/save. Keep every occurrence linked to a line. Do not require a backend to make the static app work.
 
 Preserve the research role: use HTR outputs for close reading and comparative exploration. Keep the facsimile visible while querying concordances. Apply edits through the source model; do not add recognition, segmentation or layout annotation tools unless requested.
+
+Repository corpus loading is owned by js/importer.js, wired in js/app.js through config.corpusManifest and xml-alto/manifest.json. Keep ZIP/JSON imports available and images separate.

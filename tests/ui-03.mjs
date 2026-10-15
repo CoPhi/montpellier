@@ -22,7 +22,7 @@ const $=id=>document.getElementById(id);for(const select of tree.querySelectorAl
 $('zone-filter').value='';$('match-mode').value='exact';$('sort').value='document';$('regex-scope').value='vocabulary';$('analysis-mode').value='exact';$('analysis-status').value='current';$('analysis-sort').value='document';
 globalThis.window=globalThis;globalThis.addEventListener=()=>{};globalThis.innerWidth=1200;globalThis.innerHeight=900;globalThis.confirm=()=>true;
 const preferences=new Map();globalThis.localStorage={getItem:k=>preferences.get(k)||null,setItem:(k,v)=>preferences.set(k,v),removeItem:k=>preferences.delete(k)};
-const fetchOriginal=globalThis.fetch;globalThis.fetch=async url=>{if(typeof url==='string'&&!url.startsWith('http')){const bytes=fs.readFileSync(new URL('../'+url,import.meta.url));return new Response(bytes);}throw new Error('No remote requests in UI tests');};
+const fetchOriginal=globalThis.fetch;globalThis.fetch=async url=>{if(typeof url==='string'&&url.startsWith('https://example.org/workbench/'))url=url.replace('https://example.org/workbench/','');if(typeof url==='string'&&!url.startsWith('http')){const bytes=fs.readFileSync(new URL('../'+url,import.meta.url));return new Response(bytes);}throw new Error('No remote requests in UI tests');};
 class WorkerAdapter{constructor(){this.w=new NodeWorker(new URL('./worker-bridge.mjs',import.meta.url));this.w.on('message',data=>this.onmessage?.({data}));this.w.on('error',e=>this.onerror?.(e));}postMessage(v){this.w.postMessage(v);}terminate(){this.w.terminate();}}
 globalThis.Worker=WorkerAdapter;for(const lib of ['xml-js.min.js','jszip.min.js'])vm.runInThisContext(fs.readFileSync(new URL('../vendor/'+lib,import.meta.url),'utf8'));
 await import('../js/app.js');const tick=()=>new Promise(r=>setTimeout(r,0));async function settled(){for(let i=0;i<15;i++)await tick();}
@@ -37,6 +37,15 @@ const corpus=window.workbench.project;const main=document.querySelector('.worksp
 $('text-tab').onclick();await settled();assert.equal($('analysis-controls').hidden,true);assert.equal($('text-controls').hidden,false);$('vocabulary').children[0].onclick();await settled();assert.ok($('query').value);
 // A malformed import is atomic: it does not create an empty tab or discard current corpus.
 await $('analysis-input').onchange({target:{files:[new File(['{}'],'bad.jsonl')],value:'x'}});assert.equal($('analysis-tabs').children.length,2);assert.equal(window.workbench.project,corpus);assert.ok($('status').classList.contains('error'));
+// Repository loading respects unsaved work and keeps it on a failed request.
+globalThis.location={href:'https://example.org/workbench/index.html'};
+assert.equal($('repository-corpus').hidden,false);
+globalThis.confirm=()=>false;await $('repository-corpus').onclick();assert.equal(window.workbench.project,corpus);
+globalThis.confirm=()=>true;
+const localFetch=globalThis.fetch;globalThis.fetch=async()=>new Response('',{status:404});
+await $('repository-corpus').onclick();assert.equal(window.workbench.project,corpus);assert.ok($('status').classList.contains('error'));assert.equal($('repository-corpus').disabled,false);
+globalThis.fetch=localFetch;
+await $('repository-corpus').onclick();await settled();assert.equal(window.workbench.model.pages.length,10);assert.equal(window.workbench.model.lines.length,775);assert.equal(window.workbench.project.sourceName,'xml-alto/manifest.json');assert.equal($('analysis-tabs').children.length,0);
 // Serializing project contains original annotations and durable revision state, not model cycles.
 assert.ok(JSON.stringify(corpus).includes('needs-review'));globalThis.fetch=fetchOriginal;
 console.log('0.3 UI event wiring PASS: tabs, filters, scroll, selection, edit, tooltip switch, split/reset, invalid imports (DOM double; no browser QA).');

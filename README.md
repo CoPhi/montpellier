@@ -13,6 +13,27 @@ python server.py
 
 Ouvrir http://127.0.0.1:5000 et cliquer sur **Ouvrir l’exemple**. Le serveur écoute uniquement sur localhost. Sous Windows, activer l’environnement avec `.venv\Scripts\activate`. Tout autre serveur HTTP statique peut également servir le même dossier. L’ouverture directe via `file://` n’est pas prise en charge : l’application utilise des modules ES, fetch et un Worker de type module.
 
+## Corpus XML du dépôt
+
+Le bouton **Ouvrir le corpus** charge les fichiers indiqués dans `xml-alto/manifest.json`. Le dépôt contient initialement les dix ALTO de l’échantillon et leur METS, extraits sans modification de l’archive d’exemple.
+
+Pour utiliser un autre corpus :
+
+1. Déposer les XML ALTO dans `xml-alto/`, avec un éventuel fichier METS.
+2. Mettre à jour la liste `files` de `xml-alto/manifest.json` avec tous les chemins XML à charger, relatifs au manifeste. Les sous-dossiers sont acceptés ; les chemins absolus, les remontées `..` et les doublons sont refusés.
+3. Déposer les images correspondantes dans `images/`, avec les noms indiqués dans les ALTO, ou les ajouter depuis l’interface.
+4. Cliquer sur **Ouvrir le corpus** après publication des fichiers.
+
+Exemple de manifeste :
+
+```json
+{"files":["FRAC34172_CC138_062.xml","METS.xml"]}
+```
+
+Le METS détermine l’ordre des documents lorsqu’il est présent ; sinon, les numéros physiques ALTO et les noms de fichiers sont utilisés. Le manifeste énumère les fichiers à charger : il ne remplace pas le METS. Le navigateur ne parcourt pas automatiquement les dossiers. La clé `corpusManifest` de `config.json` permet de choisir un autre manifeste ; sans cette clé, le bouton est masqué. Le chargement reste entièrement côté navigateur et fonctionne avec un serveur statique, y compris GitHub Pages. Si un fichier manque ou est invalide, le chargement échoue sans remplacer le projet ouvert.
+
+Les imports ZIP et JSON restent disponibles. Les modifications s’enregistrent dans le projet JSON ou s’exportent en ALTO ; elles ne réécrivent pas les XML de `xml-alto/`.
+
 ## Premiers essais
 
 1. Charger l’échantillon ou déposer une autre archive ZIP ALTO/METS : l’application n’impose aucune limite de dix vues numérisées.
